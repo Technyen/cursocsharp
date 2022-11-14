@@ -14,7 +14,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
 
             var listWords2 = listWords.OrderByDescending(x => x ).Take(5) ;
-            listWords2.ToList().
+           
             foreach (var item in listWords2)
             {
                 Console.WriteLine(item);
