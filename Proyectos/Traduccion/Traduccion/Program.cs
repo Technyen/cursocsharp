@@ -25,12 +25,12 @@ namespace Traduccion22
                 var languageOrigin = Console.ReadLine();
 
                 Console.WriteLine("Input a word");
-                var wordOrigin = Console.ReadLine();
+                wordTranslate = Console.ReadLine();
 
                 Console.WriteLine("Choose the destiny languages");
                 var languageDestiny = Console.ReadLine();
 
-                url = $"https://translate.argosopentech.com/translate?q={wordOrigin}&source={languageOrigin}&target={languageDestiny}";
+                url = $"https://translate.argosopentech.com/translate?q={wordTranslate}&source={languageOrigin}&target={languageDestiny}";
 
 
             }

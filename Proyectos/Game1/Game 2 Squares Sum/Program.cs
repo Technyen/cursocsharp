@@ -1,4 +1,6 @@
-﻿
+﻿using System;
+using System.Linq;
+
 public class Kata2
 {
     static void Main(string[] args)
