@@ -6,35 +6,30 @@ namespace Murmur
     {
         static void Main(string[] args)
         {
-           var resultado = CountSheep(2);
+           var resultado = CountSheep(6);
             Console.WriteLine(resultado);
 
         }
 
         public static string CountSheep(int cantidadOvejas)
         {
-            
-
-            //for (int i = 0; i <= cantidadOvejas; i++)
-            //{
-            //   if (cantidadOvejas==0)
-            //    {
-            //        return "";
-            //    }
-            //    else
-            //    {
-            //        return "1 sheep..."; 
-            //    }
-
-            //}
-            if( int numeroInput == 0)
+           var resultado = "1 sheep...";
+    
+            if( cantidadOvejas == 0)
             {
-
+                return "";
             }
             else
-                []
+            {
+                for (int i = 2; i <= cantidadOvejas; i++)
+                {
+                    resultado += i + " sheep..." ;
+                }
+                return resultado;
+            }
 
-           
+          
+            
         }
     }
 
