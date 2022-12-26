@@ -2,6 +2,8 @@
 
 
 using Newtonsoft.Json;
+using System.IO;
+using System.Xml.Linq;
 
 namespace WeatherAp
 {
@@ -12,9 +14,10 @@ namespace WeatherAp
         static async Task Main(string[] args)
         {
             using var client = new HttpClient();
+           
             string folderPath = "C:\\Countries";
             string[] filePaths = Directory.GetFiles(folderPath);
-            var tasks = new List<Task<KeyValuePair<string, double>>>();
+            var tasks = new List<Task<KeyValuePair<string, double>?>>();
 
             foreach (string filePath in filePaths)
             {
@@ -23,36 +26,65 @@ namespace WeatherAp
                 tasks.Add(gettingResult);
             }
 
-            Console.WriteLine("Todas las tareas se crearon, esperando a que terminen");
             var temperatures = await Task.WhenAll(tasks);
-            Console.WriteLine("Todas las tareas terminaron");
-            var results = new Dictionary<string, double>(temperatures);
+            foreach ( var item in temperatures)
+            {
+                if(item.HasValue)
+                {
+                    Console.WriteLine($"{item.Value.Key} the weather is {item.Value.Value}");
+                }
+               
+            }
+
+            
 
         }
         
 
-        private static async Task<KeyValuePair<string, double>> GetResults(HttpClient client,string filePath)
+        private static async Task<KeyValuePair<string, double>?> GetResults(HttpClient client,string filePath)
         {
-            Console.WriteLine($"leyendo el archivo {filePath}");
-            var stream = await File.ReadAllTextAsync(filePath);
-            var country = JsonConvert.DeserializeObject<Country>(stream);
+            
 
-            Console.WriteLine($"location para {country.Name}");
-            var locationResponse = await client.GetAsync($"https://restcountries.com/v3.1/name/{country.Name}");
-            var locationContent = await locationResponse.Content.ReadAsStringAsync();
-            var locationResult = JsonConvert.DeserializeObject<List<CountryResult>>(locationContent);
-            var myLat = locationResult[0].Latlng[0];
-            var myLog = locationResult[0].Latlng[1];
+            try
+            {
+                var stream = await File.ReadAllTextAsync(filePath);
+                var country = JsonConvert.DeserializeObject<Country>(stream);
 
-            Console.WriteLine($"temperatura para {country.Name}");
+                var locationResponse = await client.GetAsync($"https://restcountries.com/v3.1/name/{country.Name}");
+                var locationContent = await locationResponse.Content.ReadAsStringAsync();
+                var locationResult = JsonConvert.DeserializeObject<List<CountryResult>>(locationContent);
+                var myLat = locationResult[0].Latlng[0];
+                var myLog = locationResult[0].Latlng[1];
+                var tempResponse = await client.GetAsync($"http://api.weatherapi.com/v1/current.json?key=48a5dc532084458aaed180348221612&q={myLat},{myLog}");
+                var tempContent = await tempResponse.Content.ReadAsStringAsync();
+                var tempResult = JsonConvert.DeserializeObject<TempResult>(tempContent);
+                var myTemp = tempResult.Current.Temp_c;
+                var element = new KeyValuePair<string, double>(country.Name, myTemp);
+                return element;
 
-            var tempResponse = await client.GetAsync($"http://api.weatherapi.com/v1/current.json?key=f4f2b4ef63ef4faa907200629220112&q={myLat},{myLog}");
-            var tempContent = await tempResponse.Content.ReadAsStringAsync();
-            var tempResult = JsonConvert.DeserializeObject<TempResult>(tempContent);
-            var myTemp = tempResult.Current.Temp_c;
+            }
+            catch (JsonSerializationException)
+            {
+                var stream = await File.ReadAllTextAsync(filePath);
+                var country = JsonConvert.DeserializeObject<Country>(stream);
+                Console.WriteLine($"el pais que se intento ejecutar fallo es {country.Name} y el archivo es {filePath} ");
+                return null;
+            }
+            catch(JsonReaderException)
+            {
+                Console.WriteLine($"el archivo no es la extension correcta {filePath}");
+                    return null;
+            }
+           catch(Exception ex)
+            {
+                Console.WriteLine("se encontro un error");
+            }
 
-            var element = new KeyValuePair<string, double>(country.Name, myTemp);
-            return element;
+            return null;
+
+
+
+
         }
     }
 

@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Murmur", "Murmur\Murmur.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reverse", "Reverse\Reverse.csproj", "{2292E90E-4E3C-47D1-AAB9-E20E204FF594}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskParallel", "TaskParallel\TaskParallel.csproj", "{ABB1C2F7-5675-4E87-830F-BCEFAC195939}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskParallel", "TaskParallel\TaskParallel.csproj", "{ABB1C2F7-5675-4E87-830F-BCEFAC195939}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SheepCounter", "SheepCounter\SheepCounter.csproj", "{1F40F5D1-8945-4F0E-AF43-EECBDA15BBF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Handicap", "Handicap\Handicap.csproj", "{4351438A-BBBA-4550-A757-1E1BC3BFF9C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jagged Array", "Jagged Array\Jagged Array.csproj", "{19369EE4-5CB4-4D4B-A454-DC18B75C1636}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,18 @@ Global
 		{ABB1C2F7-5675-4E87-830F-BCEFAC195939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABB1C2F7-5675-4E87-830F-BCEFAC195939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABB1C2F7-5675-4E87-830F-BCEFAC195939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F40F5D1-8945-4F0E-AF43-EECBDA15BBF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F40F5D1-8945-4F0E-AF43-EECBDA15BBF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F40F5D1-8945-4F0E-AF43-EECBDA15BBF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F40F5D1-8945-4F0E-AF43-EECBDA15BBF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4351438A-BBBA-4550-A757-1E1BC3BFF9C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4351438A-BBBA-4550-A757-1E1BC3BFF9C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4351438A-BBBA-4550-A757-1E1BC3BFF9C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4351438A-BBBA-4550-A757-1E1BC3BFF9C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19369EE4-5CB4-4D4B-A454-DC18B75C1636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19369EE4-5CB4-4D4B-A454-DC18B75C1636}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19369EE4-5CB4-4D4B-A454-DC18B75C1636}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19369EE4-5CB4-4D4B-A454-DC18B75C1636}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
