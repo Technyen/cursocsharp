@@ -21,7 +21,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Handicap", "Handicap\Handic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jagged Array", "Jagged Array\Jagged Array.csproj", "{19369EE4-5CB4-4D4B-A454-DC18B75C1636}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isogram", "Isogram\Isogram.csproj", "{7EB4B0A4-3D8A-4885-8FA2-456CFB6F34AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Isogram", "Isogram\Isogram.csproj", "{7EB4B0A4-3D8A-4885-8FA2-456CFB6F34AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Binary", "Binary\Binary.csproj", "{70DCBC22-E149-4F5D-891F-8D6AA857096B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bus", "Bus\Bus.csproj", "{F682305F-F8D2-4320-B247-6144A277CC4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convert bool to string", "Convert bool to string\Convert bool to string.csproj", "{664D4A7A-D3EB-4D56-81DE-4AFBD5E280EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +75,18 @@ Global
 		{7EB4B0A4-3D8A-4885-8FA2-456CFB6F34AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EB4B0A4-3D8A-4885-8FA2-456CFB6F34AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EB4B0A4-3D8A-4885-8FA2-456CFB6F34AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70DCBC22-E149-4F5D-891F-8D6AA857096B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70DCBC22-E149-4F5D-891F-8D6AA857096B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70DCBC22-E149-4F5D-891F-8D6AA857096B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70DCBC22-E149-4F5D-891F-8D6AA857096B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F682305F-F8D2-4320-B247-6144A277CC4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F682305F-F8D2-4320-B247-6144A277CC4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F682305F-F8D2-4320-B247-6144A277CC4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F682305F-F8D2-4320-B247-6144A277CC4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{664D4A7A-D3EB-4D56-81DE-4AFBD5E280EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664D4A7A-D3EB-4D56-81DE-4AFBD5E280EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664D4A7A-D3EB-4D56-81DE-4AFBD5E280EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{664D4A7A-D3EB-4D56-81DE-4AFBD5E280EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
