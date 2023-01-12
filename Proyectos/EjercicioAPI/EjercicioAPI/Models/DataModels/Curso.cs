@@ -13,8 +13,9 @@ namespace EjercicioAPI.Models.DataModels
         public string PublicoObjetivo { get; set; } = string.Empty;
 
         public string Requisitos { get; set; }= string.Empty;   
-
-        public enum Nivel {Basico, Intermedio, Avanzado};
+        public Nivel Nivel { get; set; }    
       
     }
+    public enum Nivel { Basico, Intermedio, Avanzado };
+
 }
