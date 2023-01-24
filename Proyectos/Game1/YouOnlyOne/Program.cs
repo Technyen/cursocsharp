@@ -7,8 +7,8 @@ namespace GameOne
     {
         static void Main(string[] args)
         {
-            object[] listStr = { 123, 456 };
-            int x = 123;
+            object[] listStr = { "what","a", "great","kata"};
+            object x = "what";
             var resultado = Kata.Check(listStr, x);
             Console.WriteLine(resultado);
         }
@@ -19,7 +19,10 @@ namespace GameOne
         {
             foreach (var item in listStr)
             {
-                if (item == x) return true;
+                if (item.Equals(x))
+                {
+                    return true;
+                }
             }
 
             return false;
