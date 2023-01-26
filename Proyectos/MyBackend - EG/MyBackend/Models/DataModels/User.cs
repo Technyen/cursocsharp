@@ -8,8 +8,8 @@ namespace ApiBackend.Models.DataModels
         public string Name { get; set; } = string.Empty;
         [Required, StringLength(50)]
         public string LastName { get; set; } = string.Empty;
-        [Required]
-        public int Age { get; set; }
+
+        public int Age { get; set; }    
 
         [Required, EmailAddress]
         public string Email { get; set; }= string.Empty;

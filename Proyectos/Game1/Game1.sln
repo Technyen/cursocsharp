@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bus", "Bus\Bus.csproj", "{F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Convert bool to string", "Convert bool to string\Convert bool to string.csproj", "{664D4A7A-D3EB-4D56-81DE-4AFBD5E280EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouOnlyOne", "YouOnlyOne\YouOnlyOne.csproj", "{C9321E49-BD74-456E-88AE-EB0EEC670C8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouOnlyOne", "YouOnlyOne\YouOnlyOne.csproj", "{C9321E49-BD74-456E-88AE-EB0EEC670C8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentenceSmash", "SentenceSmash\SentenceSmash.csproj", "{A36C7F49-A3CB-4521-9409-08AFD809B9D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{C9321E49-BD74-456E-88AE-EB0EEC670C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9321E49-BD74-456E-88AE-EB0EEC670C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9321E49-BD74-456E-88AE-EB0EEC670C8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A36C7F49-A3CB-4521-9409-08AFD809B9D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A36C7F49-A3CB-4521-9409-08AFD809B9D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A36C7F49-A3CB-4521-9409-08AFD809B9D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A36C7F49-A3CB-4521-9409-08AFD809B9D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
