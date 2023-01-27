@@ -38,13 +38,14 @@ namespace ApiBackend.Controllers
             }
            
         }
-        //GETUserByAge
+
+        //GETStudentsByAge
         [HttpGet("age")]
-        public ActionResult<User> GetUserByAge(int age)
+        public ActionResult<List<Student>> GetStudentsByAge(int age)
         {
             try
             {
-                return _service.GetUserByAge(age);
+                return _service.GetStudentsByAge(age);
             }
             catch (InvalidOperationException ex)
             {

@@ -20,13 +20,15 @@ namespace ApiBackend.Services
             return userResult;
         }
 
-
-        public User GetUserByAge (int age)
+        public List<Student>? GetStudentsByAge(int age)
         {
-            var userResultByAge = _context.users.TakeWhile(user =>user.Age <= 18);
-
-            return (User)userResultByAge;
+           // var stuResult = _context.Students.SelectMany(student => student.Age  <= 18);
+            var  stuResult = from student in _context.Students where student.Age <=18 select student;
+            //var audiList = from car in cars where car.Contains("Audi") select car;
+            return (List<Student>?)stuResult;
         }
+
+
     }
 }
 

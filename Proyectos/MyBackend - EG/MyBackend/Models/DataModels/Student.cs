@@ -11,6 +11,8 @@ namespace ApiBackend.Models.DataModels
         [Required]
         public string LastName { get; set; } = string.Empty;
         [Required]
+        public int Age { get; set; }  
+        [Required]
         public DateTime DoB { get; set; }
 
         [Required]

@@ -162,7 +162,7 @@ namespace LinqSnippets
             //Obtain all employees of all Enterprises
             var employeeList = enterprises.SelectMany(enterprises => enterprises.Employees);
 
-            //Know if ana list is empty
+            //Know if any list is empty
             bool hasEnterprises = enterprises.Any(enterprise => enterprise.Employees.Any());
 
             //All enterprises at least has an employee with more than 1000e of salary
