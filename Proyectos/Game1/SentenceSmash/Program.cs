@@ -14,7 +14,7 @@ public static class Kata
     public static string Smash(string[] words)
     {
 
-        string finalresult = string.Join(" ", words).TrimEnd();
+        string finalresult = string.Join(" ", words);
 
         return finalresult;
 

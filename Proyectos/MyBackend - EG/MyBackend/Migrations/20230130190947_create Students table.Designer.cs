@@ -4,6 +4,7 @@ using ApiBackend.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiBackend.Migrations
 {
     [DbContext(typeof(UniversityDBContext))]
-    partial class UniversityDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230130190947_create Students table")]
+    partial class createStudentstable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,6 +54,9 @@ namespace ApiBackend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("StudentId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime2");
 
@@ -59,6 +65,8 @@ namespace ApiBackend.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("StudentId");
 
                     b.ToTable("categories");
                 });
@@ -70,6 +78,10 @@ namespace ApiBackend.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Chapters")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CourseId")
                         .HasColumnType("int");
@@ -99,6 +111,9 @@ namespace ApiBackend.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CourseId")
+                        .IsUnique();
 
                     b.ToTable("Chapters");
                 });
@@ -296,6 +311,24 @@ namespace ApiBackend.Migrations
                     b.ToTable("CourseStudent");
                 });
 
+            modelBuilder.Entity("ApiBackend.Models.DataModels.Category", b =>
+                {
+                    b.HasOne("ApiBackend.Models.DataModels.Student", null)
+                        .WithMany("Categories")
+                        .HasForeignKey("StudentId");
+                });
+
+            modelBuilder.Entity("ApiBackend.Models.DataModels.Chapter", b =>
+                {
+                    b.HasOne("ApiBackend.Models.DataModels.Course", "Course")
+                        .WithOne("Chapter")
+                        .HasForeignKey("ApiBackend.Models.DataModels.Chapter", "CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+                });
+
             modelBuilder.Entity("CategoryCourse", b =>
                 {
                     b.HasOne("ApiBackend.Models.DataModels.Category", null)
@@ -324,6 +357,17 @@ namespace ApiBackend.Migrations
                         .HasForeignKey("SudentsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ApiBackend.Models.DataModels.Course", b =>
+                {
+                    b.Navigation("Chapter")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ApiBackend.Models.DataModels.Student", b =>
+                {
+                    b.Navigation("Categories");
                 });
 #pragma warning restore 612, 618
         }

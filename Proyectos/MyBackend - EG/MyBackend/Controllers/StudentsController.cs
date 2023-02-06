@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiBackend.DataAccess;
 using ApiBackend.Models.DataModels;
+using ApiBackend.Services;
 
 namespace ApiBackend.Controllers
 {
@@ -15,10 +16,12 @@ namespace ApiBackend.Controllers
     public class StudentsController : ControllerBase
     {
         private readonly UniversityDBContext _context;
+        private readonly Service _service;
 
-        public StudentsController(UniversityDBContext context)
+            public StudentsController(UniversityDBContext context, Service service)
         {
             _context = context;
+            _service = service;
         }
 
         // GET: api/Students
@@ -26,6 +29,26 @@ namespace ApiBackend.Controllers
         public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
         {
             return await _context.Students.ToListAsync();
+        }
+
+        //GETStudentsByAge
+        [HttpGet("age")]
+        public ActionResult<List<Student>> GetStudentsByAge(int age)
+        {
+            try
+            {
+                var students = _service.GetStudentsByAge(age);
+                if (students == null)
+                {
+                    return NotFound("No students were found for the specified age.");
+                }
+                return students;
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
+            }
+
         }
 
         // GET: api/Students/5

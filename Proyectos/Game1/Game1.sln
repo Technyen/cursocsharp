@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YouOnlyOne", "YouOnlyOne\Yo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentenceSmash", "SentenceSmash\SentenceSmash.csproj", "{A36C7F49-A3CB-4521-9409-08AFD809B9D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JadeSmith", "JadeSmith\JadeSmith.csproj", "{7C7DE926-6A58-43DB-8DAD-D67ED740DBF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JadeSmith", "JadeSmith\JadeSmith.csproj", "{7C7DE926-6A58-43DB-8DAD-D67ED740DBF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing123", "Testing123\Testing123.csproj", "{8928D08B-9D39-4251-BCA7-8CBC21BD2A98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{7C7DE926-6A58-43DB-8DAD-D67ED740DBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C7DE926-6A58-43DB-8DAD-D67ED740DBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C7DE926-6A58-43DB-8DAD-D67ED740DBF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8928D08B-9D39-4251-BCA7-8CBC21BD2A98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8928D08B-9D39-4251-BCA7-8CBC21BD2A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8928D08B-9D39-4251-BCA7-8CBC21BD2A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8928D08B-9D39-4251-BCA7-8CBC21BD2A98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
