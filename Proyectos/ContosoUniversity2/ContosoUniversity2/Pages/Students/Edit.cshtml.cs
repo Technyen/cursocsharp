@@ -25,19 +25,20 @@ namespace ContosoUniversity.Pages.Students
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Students == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var student =  await _context.Students.FirstOrDefaultAsync(m => m.ID == id);
-            if (student == null)
+            Student = await _context.Students.FindAsync(id);
+
+            if (Student == null)
             {
                 return NotFound();
             }
-            Student = student;
             return Page();
         }
+
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.

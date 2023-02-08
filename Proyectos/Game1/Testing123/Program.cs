@@ -11,7 +11,11 @@ internal class Program
         var lines = new List<string>() { "a", "b", "c" };
 
         var resultado = LineNumbering.Number(lines);
-        Console.WriteLine(resultado);
+        foreach (var item in resultado)
+        {
+            Console.WriteLine(item);
+
+        }
     }
 }
 
@@ -22,7 +26,7 @@ internal class Program
 
         for (int i = 0; i <lines.Count; i++)
         {
-            lines.Add((i+1).ToString() +": " + lines[i]);
+            lines[i] = i+1 +": " + lines[i];
         }
         return lines;
         }
