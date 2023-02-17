@@ -7,9 +7,9 @@ namespace MyNamespace
     {
         static void Main(string[] args)
         {
-            var myList = new List<int>() { 1, 2, 3, 4, 5 };
-            Remover.RemoveSmallest(myList);
-            foreach (var item in myList)
+            var numbers = new List<int>() { 1, 2, 3, 4, 5 };
+            var query = Remover.RemoveSmallest(numbers);
+            foreach (var item in query)
             {
                 Console.WriteLine(item);
             }
@@ -19,10 +19,8 @@ namespace MyNamespace
     {
         public static List<int> RemoveSmallest(List<int> numbers)
         {
-            var newNumbers = numbers;
-            newNumbers.Remove(newNumbers.Min());
-
-            return newNumbers;
+            var query = numbers.Where(x => x != numbers.Min()).ToList();
+            return query;
         }
     }
 
